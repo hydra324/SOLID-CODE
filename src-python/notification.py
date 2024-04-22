@@ -115,7 +115,7 @@ class NotificationHandlerFactory:
 
 class MessageService:
     def __init__(self, notificationHandlerFactory) -> None:
-        self.notificationHandlerFactory =  handlerFactory
+        self.notificationHandlerFactory =  notificationHandlerFactory
 
 
     def sendNotifications(self,messagesToSend: str):
