@@ -132,27 +132,29 @@ class MessageService:
                 handler.send(msg)
             
 
-# driver code        
-handlerFactory=NotificationHandlerFactory()
-handlerFactory.add(SMSNotificationHandler())
-handlerFactory.add(EmailNotificationHandler())
-messageService = MessageService(handlerFactory)
+if __name__ == '__main__':
 
-# client requirements
-messagesToSend = [
-    {
-        'id': "1",
-        'channel':'email',
-        'message':'hello how is it going?',
-        'email':'test@test.com'
-    },
-    {
-        'id':"2",
-        'channel':'sms',
-        'message':'whats gwan bruh?',
-        'mobileNumber':'9793448789'
-    }
-]
+    # driver code        
+    handlerFactory=NotificationHandlerFactory()
+    handlerFactory.add(SMSNotificationHandler())
+    handlerFactory.add(EmailNotificationHandler())
+    messageService = MessageService(handlerFactory)
 
-# client calls send
-messageService.sendNotifications(json.dumps(messagesToSend))
+    # client requirements
+    messagesToSend = [
+        {
+            'id': "1",
+            'channel':'email',
+            'message':'hello how is it going?',
+            'email':'test@test.com'
+        },
+        {
+            'id':"2",
+            'channel':'sms',
+            'message':'whats gwan bruh?',
+            'mobileNumber':'9793448789'
+        }
+    ]
+
+    # client calls send
+    messageService.sendNotifications(json.dumps(messagesToSend))
