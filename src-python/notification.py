@@ -158,3 +158,9 @@ if __name__ == '__main__':
 
     # client calls send
     messageService.sendNotifications(json.dumps(messagesToSend))
+
+
+"""
+post thoughts: maybe we dont wanna have a handler at all and let IMessage implementations take care of sending. That way messageService
+wouldn't have to worry about fetching the right channel
+"""
