@@ -66,7 +66,7 @@ class EmailMessage(IMessage):
         self.email = email
 
     def __repr__(self) -> str:
-        return f"Email message {super()} to {self.email}"
+        return f"Email message {super().__repr__()} to {self.email}"
 
 class SMSMessage(IMessage):
     def __init__(self, id, message, mobileNumber) -> None:
@@ -74,7 +74,7 @@ class SMSMessage(IMessage):
         self.mobileNumber = mobileNumber
 
     def __repr__(self) -> str:
-        return f"SMS message {super()} to {self.mobileNumber}"
+        return f"SMS message {super().__repr__()} to {self.mobileNumber}"
 
 class BaseNotificationHandler(ABC):
 
@@ -107,7 +107,7 @@ class NotificationHandlerFactory:
     def __init__(self) -> None:
         self.handlers = {}
 
-    def add_handler(self, handler: BaseNotificationHandler):
+    def add(self, handler: BaseNotificationHandler):
         self.handlers[handler.getChannel()] = handler
 
     def getHandler(self, channel: Channel):
@@ -145,6 +145,12 @@ messagesToSend = [
         'channel':'email',
         'message':'hello how is it going?',
         'email':'test@test.com'
+    },
+    {
+        'id':"2",
+        'channel':'sms',
+        'message':'whats gwan bruh?',
+        'mobileNumber':'9793448789'
     }
 ]
 
