@@ -55,9 +55,9 @@ abstract class Game {
 
 	public Game(Board b, int playersCount, int diceFaces);
 	public abstract createGame(Board b, int playersCount, int diceFaces);
-	public abstract createPlayerSessions();
+	abstract createPlayerSessions();
 	public abstract resetPlayerSessions();
-	public abstract Dice createDice(int diceFaces);
+	abstract Dice createDice(int diceFaces);
 	public abstract int getCurrentPlayer();
 	public abstract int rollDice();
 	public abstract int movePlayer(int steps);
@@ -80,7 +80,7 @@ class PlayService implements Runnable {
 		while() {
 			int d = gameInstance.rollDice();
 			int p = gameInstance.getCurrentPlayer();
-			gameInstance.move(d);
+			gameInstance.movePlayer(d);
 			if(gameInstance.isWinner(p)) {
 				System.out.println("WINNER");
 			}
