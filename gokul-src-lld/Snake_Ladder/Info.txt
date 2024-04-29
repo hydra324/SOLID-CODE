@@ -1,0 +1,10 @@
+############Features
+1) Random board for every game - based on difficulty level
+2) Different type of games - Single player, Multi-player
+3) No bias
+
+############Actors & their actions
+1) Players - create a game, play
+2) System - create a game, play
+
+############Mics
