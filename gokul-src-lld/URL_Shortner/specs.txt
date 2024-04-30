@@ -1,0 +1,12 @@
+#############ACTORS
+1) User
+2) System
+
+#############FEATURES
+1) Given short, return long
+2) Given long, return short
+3) 1-1 mapping of long and short
+
+#############ASSUMPTIONS
+1) every character can be from [a-z] or [A-Z] or [0-9] = 62 possibilities
+2) 10 characters are sufficient, and can handle, billions of requests.
